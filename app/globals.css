@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  @apply bg-ink-50 text-ink-900 antialiased dark:bg-ink-950 dark:text-ink-100;
+}
+
+a {
+  @apply underline-offset-4;
+}
+
+::selection {
+  @apply bg-terminal/30 text-ink-950;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terminal;
+}
+
+.prose pre {
+  @apply border border-ink-200 bg-ink-900 text-ink-50 shadow-sm dark:border-ink-700 dark:bg-ink-900;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #8e9d98;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #91d18b;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #f1c27d;
+}
+
+.hljs-number,
+.hljs-attr,
+.hljs-variable {
+  color: #c27b53;
+}
+
+.prose code:not(pre code) {
+  @apply rounded bg-ink-100 px-1 py-0.5 text-[0.88em] font-medium text-ink-900 dark:bg-ink-800 dark:text-ink-100;
+}
+
+.prose img {
+  @apply rounded-md border border-ink-200 dark:border-ink-800;
+}
